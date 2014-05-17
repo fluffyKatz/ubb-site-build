@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+    {{> nav}}
+    
+    <!-- start main content area -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<!-- start of post container -->
+				<div class="col-md-8 main-article">
+					{{! Each post will be output using this markup }}
+    				{{#post}}
+					<article class="{{post_class}}">
+						<!-- feature media start -->
+	                    <div class="append-feature-media"></div>
+	                    <!-- feature media end -->
+	                    <!-- post header -->
+	                    <header class="post-header">
+	                        <h2 class="post-tile"><a href="{{url}}">{{{title}}}</a></h2>
+	                    </header>
+	                    <!-- post content -->
+	                    <div class="post-content">
+	                        {{! post content}}
+							{{content}}
+	                    </div>
+	                    <!-- post footer -->
+	                    <footer class="post-footer clearfix">
+	                        <span class="user"><i class="fa fa-user"></i>{{author}}</span><span class="date"><i class="fa fa-calendar"></i>{{date format="DD MMM YYYY"}}</span>
+	                        {{#if tags}}
+	                        <span class="tags"><i class="fa fa-tag"></i>{{tags separator=", "}}</span>
+	                        {{/if}}
+	                        <span class="comment-count pull-right"><i class="fa fa-comment"></i><a href="{{@blog.url}}{{url}}#disqus_thread">0 Comments</a></span>
+	                    </footer>
+	                    <div class="featured-ribbon"><i class="fa fa-bookmark"></i></div>
+	                    <div class="share">
+	                    	<span>Share this post:&nbsp;</span>
+		                    <a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
+		                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fa fa-twitter"></i></a>
+		                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+		                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><i class="fa fa-facebook"></i></a>
+		                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+		                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"><i class="fa fa-google-plus"></i></a>
+	                    </div>
+					</article>
+					<!-- end of post -->
+					{{> author}}
+					{{> disqus}}
+					{{/post}}
+					{{! end of post loop}}
+				</div>
+				<!-- end of post container -->
+				{{> sidebar}}
+			</div>
+		</div>
+	</section>
+	
+	<!-- end main content area -->
+	<!-- start footer -->
+	{{> footer}}

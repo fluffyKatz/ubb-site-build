@@ -1,0 +1,39 @@
+<!-- start widget -->
+<div class="sidebar-widget">
+	<h4 class="title col-centered">Featured Post</h4>
+	<div class="content clearfix">
+		<div class="recent-post-container">
+			<div>
+					{{! Each post will be output using this markup }}
+    				{{#foreach posts}}
+					<article class="{{post_class}} single-post-preview">
+						<!-- feature media start -->
+	                    <div class="append-feature-media"></div>
+	                    <!-- feature media end -->
+	                    <!-- post header -->
+	                    <header class="post-header">
+	                        <h2 class="post-tile"><a href="{{url}}">{{{title}}}</a></h2>
+	                    </header>
+	                    <!-- post content -->
+	                    <div class="post-content">
+	                        {{! post excerpt}}
+							{{content words="15"}}
+	                    </div>
+	                    <!-- post footer -->
+	                    <div class="post-footer clearfix">
+	                        <span class="user"><i class="fa fa-user"></i>{{author}}</span><span class="date"><i class="fa fa-calendar"></i>{{date format="DD MMM YYYY"}}</span>
+	                        {{#if tags}}
+	                        <span class="tags"><i class="fa fa-tag"></i>{{tags separator=", "}}</span>
+	                        {{/if}}
+	                        <span class="comment-count pull-right"><i class="fa fa-comment"></i><a href="{{@blog.url}}{{url}}#disqus_thread">0 Comments</a></span>
+	                    </div>
+	                    <div class="featured-ribbon"><i class="fa fa-bookmark"></i></div>
+					</article>
+					{{/foreach}}
+					{{! end of post loop}}
+
+				</div>
+		</div>
+	</div>
+</div>
+<!-- end widget -->

@@ -1,0 +1,51 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+    {{> nav}}
+  
+     <header class="post-header">
+	                        <h2 class="post-tile"><a href="{{url}}">{{{title}}}</a></h2>
+	                    </header>
+  
+    <!-- start main content area -->
+	<section>
+		<div class="container">
+			<div class="row">
+				<!-- start of post container -->
+				<div class="col-md-8 main-article">
+					{{! full post will be output using this markup }}
+    				{{#post}}
+					<article class="{{post_class}}">
+						<!-- feature media start -->
+	                    <div class="append-feature-media"></div>
+	                    <!-- feature media end -->
+	                    <!-- post header -->
+	                    <header class="post-header">
+	                        <h2 class="post-tile"><a href="{{url}}">{{{title}}}</a></h2>
+	                    </header>
+	                    <!-- post content -->
+	                    <div class="post-content">
+	                        {{! post content}}
+							{{content}}
+	                    </div>
+	                    <!-- post footer -->
+					</article>
+					{{/post}}
+					{{! end of post loop}}
+				</div>
+				<!-- end of post container -->
+				
+
+
+				{{> sidebar}}
+					
+			</div>
+		</div>
+	</section>
+	
+	<!-- end main content area -->
+	<!-- start footer -->
+
+	{{> footer}}

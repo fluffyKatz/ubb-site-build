@@ -1,0 +1,25 @@
+<!-- start author container -->
+
+					<div class="author-container" style="background-image:url({{author.cover}});">
+						<div class="info-continer clearfix">
+							{{#if author.image}}
+							<img class="author-image" src="{{author.image}}" alt="author-image">
+							{{/if}}
+							<h4 class="author-name">{{author.name}}</h4>
+							{{#if author.location}}
+							<span class="author-location"><i class="fa fa-map-marker"></i>{{author.location}}</span><br>
+							{{/if}}
+							
+							<span class="author-email"><i class="fa fa-envelope"></i><a href="mailto:{{author.email}}">{{author.email}}</a></span><br>
+							
+							{{#if author.website}}
+							<span class="author-web"><i class="fa fa-globe"></i><a href="{{author.website}}" target="_blank">{{author.website}}</a></span>
+							{{/if}}
+						</div>
+					</div>
+					{{#if author.bio}}
+					<div class="author-bio-container">
+						{{author.bio}}
+					</div>
+					{{/if}}
+					<!-- start author container -->

@@ -1,0 +1,658 @@
+{{!< default}}
+
+
+    {{> nav}}
+
+       <ul class="slide-control" id="slide-control">
+        <a href="#top-section"><li class="slide-control-button-down">&nbsp;
+        </li></a>
+        <a href="#Section-1"><li>&nbsp;
+        </li></a>
+        <a href="#Section-2"><li>&nbsp;
+        </li></a>
+        <a href="#foot-sec"><li>&nbsp;
+        </li></a>  
+      </ul>
+
+      <div ng-app="routerApp">
+ 		<div ui-view autoscroll="false"></div>
+ 		</div>
+
+
+
+
+<section id="Section-1">
+	<div class="container">
+		<h2 class="section1-font"> <strong>Get in the Know</strong></h2>
+   			<div class="widget-container" style="padding-top: 30px;">
+			<!--<div class="container">-->
+				<!-- footer widget 1 -->
+				<div class="col-sm-4">
+					{{> widget-recentpost}}
+				</div>
+				<!-- footer widget 2 -->
+				<div class="col-sm-4">
+					{{> widget-event}}
+				</div>
+				<!-- footer widget 3 -->
+				<div class="col-sm-4 widget">
+					{{> widget-amazon}}
+				</div>
+			<!--</div>-->
+			</div>
+	</div>
+</section>
+
+
+
+
+<!-- SECTION-2 -->
+<section id="Section-2">
+	<div class="container">
+		<div class="social-sign-up-home centre" style="padding-top: 100px; margin: 0 auto;">
+			<h2 class="titleFont" style="text-align:center;"> <strong>Connect with Us</strong></h2>
+		
+
+		<div class="row row-email">
+			<div class="col-md-2 col-1">
+				<span class="glyphicon glyphicon-envelope white" style="font-size:35px; top:35%"></span> 
+			</div>
+			<div class="col-md-2 col-2">
+				<span style="color: #fff; font-weight: 300; margin-top: 15px;">Sign up to get email updates about our cause.</span>
+			
+			</div>
+			<div class="col-md-8 col-3">
+                <form method="post" action="http://cl.exct.net/subscribe.aspx?lid=30917256" class="email-subscription-form email-subscription-form-home">
+					<input type="hidden" name="thx" value="http://invisiblechildren.com/?email-signup-result=success"/>
+					<input type="hidden" name="err" value="http://invisiblechildren.com/?email-signup-result=error"/>
+					<input type="hidden" name="usub" value="http://invisiblechildren.com/?email-signup-result=unsubscribe"/>
+					<input type="hidden" name="MID" value="10415228"/>
+					<input type="hidden" name="SubAction" value="sub_add_update"/>
+					<input type="hidden" name="Email Type" value="HTML"/>
+
+					<div class="first-name-container">
+						<input type="text" name="First Name" placeholder="first name" class="first-name">
+					</div>
+					<div class="last-name-container">
+						<input type="text" name="Last Name" placeholder="last name" class="last-name">
+					</div>
+					<div class="email-container">
+						<input type="text" name="Email Address" placeholder="your email" class="email">
+					</div>
+					<div class="submit-container">
+						<button type="submit" id="submit" class="submit">Subscribe</button>
+					</div>
+					<div class="clearfix">&nbsp;</div>
+				</form>
+                			</div>
+		</div>
+		<div class="clearfix">&nbsp;</div>
+		<div class="row row-social">
+			<div class="col-md-2 col-1">
+				<span class="glyphicon glyphicon-thumbs-up white" style="font-size:35px;top:35%;"></span> 
+			</div>
+			<div class="col-md-2 col-2">
+				<span style="color: #111;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.6); font-weight: 300; margin-top: 25px;">Help Spread the Word!</span>
+				
+			</div>
+			<div class="col-md-8 col-3">
+				<div class="fb ">
+					<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Funiversitybeyondbars&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=trebuchet+ms&amp;height=21" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="twitter">
+					<a href="https://twitter.com/ubbseattle" class="twitter-share-button" data-show-count="false" data-url="http://universitybeyondbars.org" data-via="ubbseattle" data-size="large">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+
+				<div class="google">
+				<!-- Place this tag where you want the share button to render. -->
+				<div class="g-plus" data-action="share" data-size="large" data-annotation="bubble" data-height="24"></div>
+				<!-- Place this tag after the last share tag. -->
+				<script type="text/javascript">
+				  (function() {
+				    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				    po.src = 'https://apis.google.com/js/platform.js';
+				    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				  })();
+				</script>
+				</div>
+
+				<div class="clearfix">&nbsp;</div>
+			</div>
+		</div>
+		<div class="clearfix">&nbsp;</div>
+	</div>
+</div>
+
+
+
+	
+ </section> 
+ <!-- / SECTION-2 -->
+ 
+
+      
+<!-- FOOTER -->
+    <footer id="foot-sec">
+    <h2 class="section1-font"> <strong>Help a Great Cause</strong></h2>
+		<div class="container ">
+			<!-- footer widget 1 -->
+				<div class="col-sm-4">
+					{{> widget-follow}}
+				</div>
+				<!-- footer widget 2 -->
+				<div class="col-sm-4">
+					{{> widget-text-footer}}
+				</div>
+				<!-- footer widget 3 -->
+				<div class="col-sm-4 widget">
+					{{> widget-donate}}
+				</div>
+				<div class="col-sm-12">
+				   <div class="footer">
+					<small>Copyright &copy; <a href="{{@blog.url}}">{{@blog.title}}</a> {{date format="YYYY"}} &bull; All rights reserved. Site design by <a href="http://www.owlystudios.com">Owly</a></small>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	<!--
+<div class="page {{ pageClass }}" ng-view></div>
+		
+    <div id="about">
+        <p>A demo on Angular Animations: ng-view</p>
+        <p>View the <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Scotch.io Tutorial</a></p>
+    </div>-->
+
+
+
+
+
+    </footer>
+
+
+
+
+
+
+
+<!-- / FOOTER -->
+<!--
+
+<form method="post" name="donorForm" onsubmit="return validate_form()" action="https://sna.etapestry.com/prod/HostedOnlineDonorRegSave.jsp">
+    <input type="hidden" name="dbOrgName" value="UniversityBeyondBars_1"/>
+    <input type="hidden" name="locale" value="en_US"/>
+    <input type="hidden" name="isDiy" value="true"/>
+    <input type="hidden" name="pageId" value="tEDe83aS"/>
+    <input type="hidden" name="successURL" value="https://app.etapestry.com/onlineforms/UniversityBeyondBars_1/donate-1Success.html"/>
+    <input type="hidden" name="failURL" value="https://app.etapestry.com/onlineforms/UniversityBeyondBars_1/donate-1Fail.html"/>
+    <input type="hidden" name="persona" value="Personal"/>
+    <input type="hidden" name="notifyDonor" value="true"/>
+    <input type="hidden" name="fromEMail" value="info@universitybeyondbars.org"/>
+    <input type="hidden" name="notifyOrg" value="true"/>
+    <input type="hidden" name="notifyEMail" value="info@universitybeyondbars.org"/>
+    <input type="hidden" name="transType" value="donation" /> 
+    <input type="hidden" name="allow" value="true" /> 
+    <input type="hidden" name="accountName" /> 
+    <input type="hidden" name="sortName" /> 
+    <input type="hidden" name="longSalutation" /> 
+    <input type="hidden" name="shortSalutation" /> 
+    <input type="hidden" name="personaNote" /> 
+    <input type="hidden" name="rgsCreate" value="true" /> 
+    <input type="hidden" name="rgsCopyUDFs" value="true" />
+    <input type="hidden" name="approachName" value="" />
+    <input type="hidden" name="campaignName" value=""/>
+    <input type="hidden" name="transProcessorRefName" value="25872.0.679993"/> 		
+    <input type="hidden" name="letterName" /> 
+    <input type="hidden" name="donorEmailSubject" value="Thank you for your donation to UBB" /> 
+    <input type="hidden" name="orgEmailSubject" value="online donation received" />
+    <input type="hidden" name="donorEmailRef" value="25872.0.3290" />
+    <input type="hidden" name="orgLocale" value="en_US" />
+    <input type="hidden" name="fundName" value="25872.0.3388" />
+    <div id="pageRoot" class="embed">
+        <div id="pageContent">
+            <div style="height:10px;width:100%"></div>
+            <div id="newUdfRegion" class="pageRegion"></div>
+            <div id="gift_information_region" class="pageRegion">
+                <div class="ecRegionHeader">
+                    <h1 class="regionTitle">Gift Information</h1>
+                </div>
+                <div id="gift_information_widget_block" class="block gift_information_widget_block pageBlock">
+                    <div id="ecAdvancedDonationWidget" class="" >
+                        <div id="gift_amount_simple" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">Donation Amount*</h6>
+                            <h6 class="currencySymbol">$</h6>
+                            <input id="gift_amount_simpleField" type="text" name="otherAmt" etrequired="true" onchange="getTotal();"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="rgsFrequency" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">Donation Frequency*</h6>
+                            <select id="rgsFrequencyField" name="rgsFrequency" etrequired="true">
+                                <option id="gift_amount_advanced_-" value="-">One Time</option>
+                                <option id="gift_amount_advanced_1" value="1">Annually</option>
+                                <option id="gift_amount_advanced_2" value="2">Semi-Annually</option>
+                                <option id="gift_amount_advanced_4" value="4">Quarterly</option>
+                                <option id="gift_amount_advanced_12" value="12">Monthly</option>
+                                <option id="gift_amount_advanced_52" value="52">Weekly</option>
+                            </select>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact_information_region" class="pageRegion">
+                <div class="ecRegionHeader">
+                    <h1 class="regionTitle">Contact Information</h1>
+                </div>
+                <div id="name_block" class="block name_block pageBlock">
+                    <div id="salutation" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Title</h6>
+                        <input id="salutationField" type="text" name="salutation"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div id="firstName" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">First Name*</h6>
+                        <input id="firstNameField" type="text" name="firstName" etrequired="true"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div id="middleName" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Middle Name</h6>
+                        <input id="middleNameField" type="text" name="middleName"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div id="lastName" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Last Name*</h6>
+                        <input id="lastNameField" type="text" name="lastName" etrequired="true"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div id="contact_block" class="block contact_block pageBlock">
+                    <div id="ecCountryStateWidget" class="" >
+                        <script>
+                            //<![CDATA[
+                            var countrySelector = {
+                            boxId: "countryField",
+                            onchange: function(boxObj) {
+                            if (stateSelector) { stateSelector.updateStateSelect(boxObj.value); }
+                            },
+                            initStateSelector: function() {
+                            this.onchange(document.getElementById(this.boxId));
+                            switchAddressFields();
+                            }
+                            };
+                            //]]>
+                        </script>
+                        <div id="country" class="pageBlockElement">
+                            <h6 id="label">Country*</h6>
+                            <select name="country" id="countryField" onchange="countrySelector.onchange(this); switchAddressFields();" etrequired="true">
+                                <option value="" selected="selected" >(None Selected)</option>
+                                <option value="AU">Australia</option>
+                                <option value="CA">Canada</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="US" selected="true" >United States</option>
+                            </select>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="address" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">Address*</h6>
+                            <input id="addressField" type="text" name="address" etrequired="true"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="city" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">City*</h6>
+                            <input id="cityField" type="text" name="city" etrequired="true"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="state" class="pageBlockElement" style="display:none">
+                            <h6 id="label">State / Province*</h6>
+                            <select id="stateField" name="state" onchange="stateSelector.selectState();" etrequired="true">							
+                            </select>
+                            <input type="hidden" name="selectedState" />
+                            <div style="clear:both;"></div>
+                        </div>
+                        <script>
+                            //<![CDATA[
+                            var stateSelector = {
+                            countryMap: {},
+                            initd: false,
+                            boxId: "stateField",
+                            initialValue: document.donorForm.selectedState.value,
+                            initCountryMap: function() {
+                            if (this.initd) return;
+                            var stateList = null;
+                            var pair = null;
+                            stateList = new Array();
+                            pair = new Object(); pair.code = "AL"; pair.name = "Alabama"; stateList.push(pair);
+                            pair = new Object(); pair.code = "AK"; pair.name = "Alaska"; stateList.push(pair);
+                            pair = new Object(); pair.code = "AZ"; pair.name = "Arizona"; stateList.push(pair);
+                            pair = new Object(); pair.code = "AR"; pair.name = "Arkansas"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CA"; pair.name = "California"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CO"; pair.name = "Colorado"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CT"; pair.name = "Connecticut"; stateList.push(pair);
+                            pair = new Object(); pair.code = "DE"; pair.name = "Delaware"; stateList.push(pair);
+                            pair = new Object(); pair.code = "DC"; pair.name = "District of Columbia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "FL"; pair.name = "Florida"; stateList.push(pair);
+                            pair = new Object(); pair.code = "GA"; pair.name = "Georgia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "HI"; pair.name = "Hawaii"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ID"; pair.name = "Idaho"; stateList.push(pair);
+                            pair = new Object(); pair.code = "IL"; pair.name = "Illinois"; stateList.push(pair);
+                            pair = new Object(); pair.code = "IN"; pair.name = "Indiana"; stateList.push(pair);
+                            pair = new Object(); pair.code = "IA"; pair.name = "Iowa"; stateList.push(pair);
+                            pair = new Object(); pair.code = "KS"; pair.name = "Kansas"; stateList.push(pair);
+                            pair = new Object(); pair.code = "KY"; pair.name = "Kentucky"; stateList.push(pair);
+                            pair = new Object(); pair.code = "LA"; pair.name = "Louisiana"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ME"; pair.name = "Maine"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MD"; pair.name = "Maryland"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MA"; pair.name = "Massachusetts"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MI"; pair.name = "Michigan"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MN"; pair.name = "Minnesota"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MS"; pair.name = "Mississippi"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MO"; pair.name = "Missouri"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MT"; pair.name = "Montana"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NE"; pair.name = "Nebraska"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NV"; pair.name = "Nevada"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NH"; pair.name = "New Hampshire"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NJ"; pair.name = "New Jersey"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NM"; pair.name = "New Mexico"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NY"; pair.name = "New York"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NC"; pair.name = "North Carolina"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ND"; pair.name = "North Dakota"; stateList.push(pair);
+                            pair = new Object(); pair.code = "OH"; pair.name = "Ohio"; stateList.push(pair);
+                            pair = new Object(); pair.code = "OK"; pair.name = "Oklahoma"; stateList.push(pair);
+                            pair = new Object(); pair.code = "OR"; pair.name = "Oregon"; stateList.push(pair);
+                            pair = new Object(); pair.code = "PA"; pair.name = "Pennsylvania"; stateList.push(pair);
+                            pair = new Object(); pair.code = "RI"; pair.name = "Rhode Island"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SC"; pair.name = "South Carolina"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SD"; pair.name = "South Dakota"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TN"; pair.name = "Tennessee"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TX"; pair.name = "Texas"; stateList.push(pair);
+                            pair = new Object(); pair.code = "UT"; pair.name = "Utah"; stateList.push(pair);
+                            pair = new Object(); pair.code = "VT"; pair.name = "Vermont"; stateList.push(pair);
+                            pair = new Object(); pair.code = "VA"; pair.name = "Virginia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "WA"; pair.name = "Washington"; stateList.push(pair);
+                            pair = new Object(); pair.code = "WV"; pair.name = "West Virginia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "WI"; pair.name = "Wisconsin"; stateList.push(pair);
+                            pair = new Object(); pair.code = "WY"; pair.name = "Wyoming"; stateList.push(pair);
+                            this.countryMap["US"] = stateList;
+                            stateList = new Array();
+                            pair = new Object(); pair.code = "AB"; pair.name = "Alberta"; stateList.push(pair);
+                            pair = new Object(); pair.code = "BC"; pair.name = "British Columbia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MB"; pair.name = "Manitoba"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NB"; pair.name = "New Brunswick"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NL"; pair.name = "Newfoundland and Labrador"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NT"; pair.name = "Northwest Territories"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NS"; pair.name = "Nova Scotia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NU"; pair.name = "Nunavut"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ON"; pair.name = "Ontario"; stateList.push(pair);
+                            pair = new Object(); pair.code = "PE"; pair.name = "Prince Edward Island"; stateList.push(pair);
+                            pair = new Object(); pair.code = "QC"; pair.name = "Quebec"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SK"; pair.name = "Saskatchewan"; stateList.push(pair);
+                            pair = new Object(); pair.code = "YT"; pair.name = "Yukon"; stateList.push(pair);
+                            this.countryMap["CA"] = stateList;
+                            stateList = new Array();
+                            pair = new Object(); pair.code = "NSW"; pair.name = "New South Wales"; stateList.push(pair);
+                            pair = new Object(); pair.code = "VIC"; pair.name = "Victoria"; stateList.push(pair);
+                            pair = new Object(); pair.code = "QLD"; pair.name = "Queensland"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SA"; pair.name = "South Australia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TAS"; pair.name = "Tasmania"; stateList.push(pair);
+                            pair = new Object(); pair.code = "WA"; pair.name = "Western Australia"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ACT"; pair.name = "Australian Capital Territory"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NT"; pair.name = "Northern Territory"; stateList.push(pair);
+                            this.countryMap["AU"] = stateList;
+                            stateList = new Array();
+                            pair = new Object(); pair.code = "AGU"; pair.name = "Aguascalientes"; stateList.push(pair);
+                            pair = new Object(); pair.code = "BCN"; pair.name = "Baja California"; stateList.push(pair);
+                            pair = new Object(); pair.code = "BCS"; pair.name = "Baja California Sur"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CAM"; pair.name = "Campeche"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CHH"; pair.name = "Chihuahua"; stateList.push(pair);
+                            pair = new Object(); pair.code = "CHP"; pair.name = "Chiapas"; stateList.push(pair);
+                            pair = new Object(); pair.code = "COA"; pair.name = "Coahuila"; stateList.push(pair);
+                            pair = new Object(); pair.code = "COL"; pair.name = "Colima"; stateList.push(pair);
+                            pair = new Object(); pair.code = "DIF"; pair.name = "Distrito Federal"; stateList.push(pair);
+                            pair = new Object(); pair.code = "DUR"; pair.name = "Durango"; stateList.push(pair);
+                            pair = new Object(); pair.code = "GRO"; pair.name = "Guerrero"; stateList.push(pair);
+                            pair = new Object(); pair.code = "GUA"; pair.name = "Guanajuato"; stateList.push(pair);
+                            pair = new Object(); pair.code = "HID"; pair.name = "Hidalgo"; stateList.push(pair);
+                            pair = new Object(); pair.code = "JAL"; pair.name = "Jalisco"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MEX"; pair.name = "Mexico"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MIC"; pair.name = "Michoacán"; stateList.push(pair);
+                            pair = new Object(); pair.code = "MOR"; pair.name = "Morelos"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NAY"; pair.name = "Nayarit"; stateList.push(pair);
+                            pair = new Object(); pair.code = "NLE"; pair.name = "Nuevo Leon"; stateList.push(pair);
+                            pair = new Object(); pair.code = "OAX"; pair.name = "Oaxaca"; stateList.push(pair);
+                            pair = new Object(); pair.code = "PUE"; pair.name = "Puebla"; stateList.push(pair);
+                            pair = new Object(); pair.code = "QUE"; pair.name = "Querétaro"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ROO"; pair.name = "Quintana Roo"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SIN"; pair.name = "Sinaloa"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SLP"; pair.name = "San Luis Potosí"; stateList.push(pair);
+                            pair = new Object(); pair.code = "SON"; pair.name = "Sonora"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TAB"; pair.name = "Tabasco"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TAM"; pair.name = "Tamaulipas"; stateList.push(pair);
+                            pair = new Object(); pair.code = "TLA"; pair.name = "Tlaxcala"; stateList.push(pair);
+                            pair = new Object(); pair.code = "VER"; pair.name = "Veracruz"; stateList.push(pair);
+                            pair = new Object(); pair.code = "YUC"; pair.name = "Yucatan"; stateList.push(pair);
+                            pair = new Object(); pair.code = "ZAC"; pair.name = "Zacatecas"; stateList.push(pair);
+                            this.countryMap["MX"] = stateList;
+                            stateList = new Array();
+                            this.countryMap["none"] = stateList;
+                            this.initd = true;
+                            },
+                            clearSelect: function(selectBox) {
+                            for (var i = selectBox.options.length - 1; i != -1 ; i--) { selectBox.removeChild(selectBox.options[i]); }
+                            },
+                            addOption: function(selectBox, name, value, selected) {
+                            var index = selectBox.options && selectBox.options.length ? selectBox.options.length : 0;
+                            selectBox.options[index] = new Option(name, value, false, selected);
+                            },
+                            selectState: function() {
+                            document.donorForm.selectedState.value = document.donorForm.state.value;
+                            },
+                            updateStateSelect: function(countryCode) {
+                            this.initCountryMap();
+                            var selectBox = document.getElementById(this.boxId);
+                            if(selectBox) {
+                            this.clearSelect(selectBox);
+                            this.addOption(selectBox, "(None Selected)", "");
+                            if (!countryCode) countryCode = "none";
+                            var states = this.countryMap[countryCode];
+                            var defaultSelected = true;
+                            for (var i = 0 ; states && i != states.length ; i++) {
+                            var selected = document.donorForm.selectedState.value == states[i].code;
+                            this.addOption(selectBox, states[i].name, states[i].code, selected);
+                            if (selected) { defaultSelected = false; this.initialValue = ""; }
+                            }
+                            this.addOption(selectBox, "Other/International", "Outside US");
+                            if (states && defaultSelected) selectBox.selectedIndex = 0;
+                            else if (defaultSelected) selectBox.selectedIndex = 1;
+                            }
+                            }
+                            };
+                            //]]>
+                        </script>
+                        <div id="postalCode" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">Postal Code*</h6>
+                            <input id="postalCodeField" type="text" name="postalCode" etrequired="true"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="county" class="systemStandardElement standard pageBlockElement" style="display:none;">
+                            <h6 id="label">County*</h6>
+                            <input id="countyField" type="text" name="county" etrequired="true"/>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <div id="email" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Email*</h6>
+                        <input id="emailField" type="text" name="email" etrequired="true"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div id="confirmEmail" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Confirm Email*</h6>
+                        <input id="confirmEmailField" type="text" name="confirmEmail" etrequired="true"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div id="phone" class="systemStandardElement standard pageBlockElement">
+                        <h6 id="label">Phone*</h6>
+                        <input id="phoneField" type="text" name="phone" etrequired="true"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="payment_information_region" class="pageRegion">
+                <div class="ecRegionHeader">
+                    <h1 class="regionTitle">Payment Information</h1>
+                </div>
+                <div id="payment_widget_block" class="block payment_widget_block pageBlock">
+                    <div id="ecPaymentWidget" class="" >
+                        <div id="amount" class="systemStandardElement standard pageBlockElement">
+                            <h6 id="label">Amount*</h6>
+                            <h6 class="currencySymbol">$</h6>
+                            <input id="amountField" type="text" name="amount" etrequired="true" />
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div id="ecCCFields">
+                            <div id="cardType" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">Card Type*</h6>
+                                <select id="cardTypeField" name="cardType" etrequired="true">
+                                    <option id="cardType_Visa" value="Visa">Visa</option>
+                                    <option id="cardType_MasterCard" value="MasterCard">MasterCard</option>
+                                    <option id="cardType_Discover" value="Discover">Discover</option>
+                                    <option id="cardType_American Express" value="American Express">American Express</option>
+                                </select>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div id="cardholderName" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">Name on Card*</h6>
+                                <input id="cardholderNameField" type="text" name="cardholderName" etrequired="true"/>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div id="cardNumber" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">Card Number*</h6>
+                                <input id="cardNumberField" type="text" name="cardNumber" etrequired="true" autocomplete="off"/>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div id="cardCVV2" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">CVV2*</h6>
+                                <input id="cardCVV2Field" type="text" name="cardCVV2" etrequired="true" autocomplete="off" maxlength="4"/>
+                                <a id="cvv2infoLink" href="https://app.etapestry.com/hosted/eTapestry.com/cvv2_en.html" onclick="window.open(this.href, '','toolbar=no,location=no-directories=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=400');return false;">CVV2 Information</a>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div id="cardExpMonth" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">Expiration Month*</h6>
+                                <select id="cardExpMonthField" name="cardExpMonth" etrequired="true">
+                                    <option id="cardExpMonth_01" value="01">01</option>
+                                    <option id="cardExpMonth_02" value="02">02</option>
+                                    <option id="cardExpMonth_03" value="03">03</option>
+                                    <option id="cardExpMonth_04" value="04">04</option>
+                                    <option id="cardExpMonth_05" value="05">05</option>
+                                    <option id="cardExpMonth_06" value="06">06</option>
+                                    <option id="cardExpMonth_07" value="07">07</option>
+                                    <option id="cardExpMonth_08" value="08">08</option>
+                                    <option id="cardExpMonth_09" value="09">09</option>
+                                    <option id="cardExpMonth_10" value="10">10</option>
+                                    <option id="cardExpMonth_11" value="11">11</option>
+                                    <option id="cardExpMonth_12" value="12">12</option>
+                                </select>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div id="cardExpYear" class="systemStandardElement standard pageBlockElement">
+                                <h6 id="label">Expiration Year*</h6>
+                                <select id="cardExpYearField" name="cardExpYear" etrequired="true">
+                                    <option id="cardExpYear_2014" value="2014">2014</option>
+                                    <option id="cardExpYear_2015" value="2015">2015</option>
+                                    <option id="cardExpYear_2016" value="2016">2016</option>
+                                    <option id="cardExpYear_2017" value="2017">2017</option>
+                                    <option id="cardExpYear_2018" value="2018">2018</option>
+                                    <option id="cardExpYear_2019" value="2019">2019</option>
+                                    <option id="cardExpYear_2020" value="2020">2020</option>
+                                    <option id="cardExpYear_2021" value="2021">2021</option>
+                                    <option id="cardExpYear_2022" value="2022">2022</option>
+                                    <option id="cardExpYear_2023" value="2023">2023</option>
+                                    <option id="cardExpYear_2024" value="2024">2024</option>
+                                    <option id="cardExpYear_2025" value="2025">2025</option>
+                                    <option id="cardExpYear_2026" value="2026">2026</option>
+                                    <option id="cardExpYear_2027" value="2027">2027</option>
+                                    <option id="cardExpYear_2028" value="2028">2028</option>
+                                    <option id="cardExpYear_2029" value="2029">2029</option>
+                                    <option id="cardExpYear_2030" value="2030">2030</option>
+                                    <option id="cardExpYear_2031" value="2031">2031</option>
+                                    <option id="cardExpYear_2032" value="2032">2032</option>
+                                    <option id="cardExpYear_2033" value="2033">2033</option>
+                                    <option id="cardExpYear_2034" value="2034">2034</option>
+                                </select>
+                                <div style="clear:both;"></div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="comments_box_region" class="pageRegion">
+                <div id="comments_box" class="placeholder comments_box pageBlock">
+                    <div class="pageBlockElement">
+                        <h6 id="label" class="commentsLabel">Additional Comments</h6>
+                        <textarea name="comments" id="commentsBox" cols="32" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            -->
+            <!--
+            <div id="security_code_region" class="pageRegion">
+                <div class="ecRegionHeader">
+                    <h1 class="regionTitle">Security Code</h1>
+                </div>
+                <div id="security_code_recaptcha" class="placeholder security_code_recaptcha pageBlock">
+                    <div class="pageBlock" id="captchaContainer">
+                        <input type="hidden" name="useRecaptcha" value="true" />
+                        <script type="text/javascript">
+                            var RecaptchaOptions = {
+                               theme : 'white'
+                            };
+                        </script>
+                        <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6LfrhesSAAAAAGlwawmgOeUE5gpb6Is8zCiBkflG\"></script>
+                    </div>
+                </div>
+            </div>
+
+            -->
+<!--
+            <div id="page_bottom_region" class="pageRegion">
+                <div id="submitSection">
+                    <input id="submitButton" type="submit" name="submit" value="Submit"/>
+                <a id="resetLink" href="javascript:donorForm.reset();" class="etapReset defaultFont">Reset</a>
+                </div>
+                <script type="text/JavaScript" src="https://app.etapestry.com/hosted/eTapestry.com/etapEmbedResizing.js"></script><iframe id="etapIframe" onload="window.resizeIframe()" resultHeight="300" style="width:549px;border:none;height:276px" src="https://app.etapestry.com/onlineforms/UniversityBeyondBars_1/donate-1.html"></iframe>
+
+              
+                <div id="bottomLogos" class="etapPoweredBy defaultFont bottomDiv">
+                    <img id="blackbaudLogo" src="donate-1images/blackbaudLogo.jpg"/>
+                    <span id="poweredByText">Powered by <a href="https://www.blackbaud.com/fundraising-crm/etapestry-donor-management.aspx" title="eTapestry">eTapestry</a>.</span>
+                </div>
+                -->
+                <!--
+                <div id="bottomSSL" class="etapThawte defaultFont bottomDiv">
+                    <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications.">
+                        <tr>
+                            <td width="135" align="center" valign="top">
+                                <script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=app.etapestry.com&amp;size=M&amp;use_flash=YES&amp;use_transparent=YES&amp;lang=en"></script>
+                                <br />
+                                <a href="http://www.verisign.com/ssl-certificate/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+               
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="pageFooter"></div>
+    </div>
+</form>
+ -->
+
+	

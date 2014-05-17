@@ -1,0 +1,83 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+    {{> nav}}
+
+
+    <style>
+    .page-content {
+      margin-top: 150px;
+      padding-bottom: 20px;
+    }
+    body {
+      background-color: #f9f9f9;
+    }
+    footer {
+      min-height:0px;
+    }
+    h1,h2,h3,h4,h5,h6{
+      font-weight:200;
+      font-family: 'Raleway', 'Lato', Arial, sans-serif;
+        color: #5F5E5D;
+        text-shadow: 0 0px 0px rgba(0,0,0,0.3);
+    }
+
+    div.list-group-item {
+    height:auto;
+    min-height:100px;
+}
+
+    div.list-group-item .col-md-6 {
+      padding-top: 20px;
+    }
+div.list-group-item.active small {
+    color:#fff;
+}
+.well {
+  min-height: 1700px;
+}
+
+    </style>
+  
+    
+ 
+<div class="container page-content">
+<div class="row">
+ <div class="col-md-9">
+<h3>Art Class</h3>
+<p>
+One of UBB’s most unusual courses in our certificate pathway is the studio art class. There, students have the opportunity to learn new techniques, hone existing skills, or practice a new medium. Each semester is devoted to a different series, including advanced gouache, pen and ink drawing, and an acrylic series. Many of the students graciously donate their artwork to UBB, which can often be viewed at UBB events and in area cafes.  
+</p>
+Many of the art pieces shown below are available for sale. If you are interested in making a purchase, please contact (info@universitybeyondbars)
+
+[slideshow of pictures that Merissa is working on]
+
+Display at Chocolati in Wallingford, March 2014
+(insert pictures)
+
+Display at Columbia City Bakery, March 2014
+(insert pictures)
+</div>
+ <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-globe fa-fw"></i>Our Impact</a></li>
+                <li class="divider"></li>
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-certificate fa-fw"></i>Programs</a></li>
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-pencil fa-fw"></i>Art Class</a></li>
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-star fa-fw"></i>PAC</a></li>
+                <li class="active"><a href="http://www.jquery2dotnet.com"><i class="fa fa-book fa-fw"></i>Teachers</a></li>
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-group fa-fw"></i>Partners</a></li>
+                <li><a href="http://www.jquery2dotnet.com"><i class="fa fa-mail-forward fa-fw"></i>Learn More</a></li>
+            </ul>
+        </div>
+</div>
+ </div>
+
+
+	
+	<!-- end main content area -->
+	<!-- start footer -->
+
+	{{> footer}}

@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>iTunes Expanding Albums</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Thomas Park">
+	<meta name="description" content="A demo of the iTunes 11 Expanding Albums Effect in HTML, CSS, and JS">
+	<link rel="stylesheet" href="css/student-style.css">
+	<style type="text/css">
+
+	</style>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/mustache.js"></script>
+	<script src="js/jquery.app-folders.js"></script>
+	<script src="js/quantize.js"></script>
+	<script src="js/color-thief.js"></script>
+
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			$.ajax({
+				url: "https://api.myjson.com/bins/9u3d",
+				dataType: 'json',
+				success: function(data) {
+					var albums = Mustache.to_html($('#albums').html(), data);
+					var details = Mustache.to_html($('#details').html(), data);
+					$('.app-folders-container').html(albums+details);     
+					
+					$('.app-folders-container').appFolders({
+						opacity: 1, 								// Opacity of non-selected items
+						marginTopAdjust: true, 						// Adjust the margin-top for the folder area based on row selected?
+						marginTopBase: 0, 							// If margin-top-adjust is "true", the natural margin-top for the area
+						marginTopIncrement: 0,						// If margin-top-adjust is "true", the absolute value of the increment of margin-top per row
+						animationSpeed: 200,						// Time (in ms) for transitions
+						URLrewrite: true, 							// Use URL rewriting?
+						URLbase: "./",						// If URL rewrite is enabled, the URL base of the page where used. Example (include double-quotes): "/services/"
+			            internalLinkSelector: ".jaf-internal a"		// a jQuery selector containing links to content within a jQuery App Folder
+					});
+
+					// For each image:
+					// Once image is loaded, get dominant color and palette and display them.
+					$('.app-icon').bind('load', function (event) {
+					    var image = event.target;
+					    var $image = $(image);
+					    var imageSection = $image.closest('.imageSection');
+
+					    var colors = getColors(image);
+					    styleBackground(colors[1], $image.parent().parent().attr('id'));
+					    styleText(colors[1], colors[0],$image.parent().parent().attr('id'));
+
+					});
+				}
+			});
+		});
+
+	</script>
+
+<div class="container">
+<div class="row">
+
+<h1>Our Students</h1>
+<p>
+Our three educational pathways allow us to serve a large and diverse group of students.  Participation in University Beyond Bars (UBB) is always elective, and we do not limit participation based on sentence structure. Rather, we recognize that all students, regardless of sentence length, can benefit from higher education and impact their peers, environment, and community in positive and meaningful ways. Our students range in age from 18-65 and nearly half are people of color.</p>
+</div> 
+<div class="row">
+<h3>Student Leadership</h3>
+<p>
+In an environment that places severe limitations on self-determination, UBB cultivates healthy leadership roles for prisoners through the Prisoner Advisory Committee (PAC).  The PAC is comprised of UBB students that have demonstrated a continued commitment to UBB’s work and mission. The PAC meets with UBB staff weekly and plays a prominent role in decisions about course offerings and organizational goals. </p>
+<p>
+Meet our Prisoner Advisory Committee members below!
+</p>
+</div>
+	</div>
+<div class="well" style="padding: 0px;">
+	<div class="app-folders-container">
+		<script id="albums" type="text/x-mustache">
+			{{#data}}
+				{{#first}}
+				<div class='jaf-row jaf-container'>
+				{{/first}}
+					<div class='folder' id='{{id}}'>
+						<a href='#'>
+							<img class='app-icon img-circle' style="-moz-box-shadow: 10px 10px 5px #888; -webkit-box-shadow: 0px 0px 0px #fff; box-shadow: 0px 0px 0px #fff;" src='images/{{image}}'>
+							<p class='album-name' style="text-align: center;">{{name}}</p>
+						</a>
+					</div>
+				{{#last}}
+					<br class='clear'>
+				</div>
+				{{/last}}
+			{{/data}}
+
+			</div>
+		</script>
+
+		<script id="details" type="text/x-mustache">
+			{{#data}}
+				<div class='folderContent {{id}}'>
+					<div class='jaf-container'>
+						<div>
+							<div class='art-wrap'>
+								<img src='images/{{image}}'>
+							</div>
+							<h2><a target="_blank" class="primaryColor">{{name}}</a></h2>
+						
+							<div class='multi'>
+								<ol class="secondaryColor">
+									{{about}}
+								</ol>
+							</div>
+						</div>
+						<br class='clear'>
+					</div>
+					<a href="#" class="close">&times;</a>
+				</div>
+			{{/data}}
+		</script>
+</div>
+
+
+</div> <!-- well -->
+
+<div class="container">
+
+
+<h3>Teaching Assistants</h3>
+<p>
+Students that demonstrate a high level of understanding and enthusiasm for an area of study and who are passionate about learning and leading are also able to serve as UBB Teaching Assistants (TAs). UBB's TAs are essential to the success of our students and our programs:  TAs support our teachers and staff by assisting with classroom facilitation, and they support their peers by serving as tutors and academic mentors.  TAs also serve on UBB’s Prisoner Advisory Committee.
+</p>
+<div class="well">
+<h4>TEDx “Turning Keys” at Monroe Correctional Complex</h4>
+
+<p>On March 15, 2014, the Monroe Correctional Complex hosted a TEDx talk entitled “Turning Keys” to discuss prison reform. Five University Beyond Bars students participated: <p>
+<ul>
+<li>Brandon P, <a href="http://tedxtalks.ted.com/video/Expand-Expand-Expand-Brandon-P;search%3ATedx%20Monroe" target="_blank">Expand Expand Expand</a></li>
+<li>John L, <a href="http://tedxtalks.ted.com/video/Turning-Prisons-into-Schools-Jo;search%3ATedx%20Monroe" target="_blank">Turning Prisons into Schools</a></li>
+<li>Nick H, <a href="http://tedxtalks.ted.com/video/The-Power-of-Sustainability-Nic;search%3ATedx%20Monroe" target="_blank">Power of Sustainability</a></li>
+<li>Jarrelle M, <a href="http://tedxtalks.ted.com/video/The-Future-of-Our-Society-Jarre;search%3ATedx%20Monroe" target="_blank">The Future of our society</a></li>
+<li>Spencer O, <a href="http://tedxtalks.ted.com/video/Armed-or-Equipped-Spencer-O-at;search%3ATedx%20Monroe" target="_blank">Armed or Equipped?</a></li>
+<li>Anthony W, emcee</li>
+<li>David Shirley, inside curator</li>
+</ul>
+To view videos of all presenters, please <a href="https://www.youtube.com/playlist?list=PLUOQSTnnJJfsHM6KQmsC4c58_ftT6_3k9" target="_blank">click here</a>.
+</div>
+
+<h3 class="text-center">Student Body Snapshot</h3>
+
+<h4>Students by Ethnicity:</h4>
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+<tr>
+  <td class="active"><strong>Race</strong></td>
+  <td ><strong>UBB Students</strong></td>
+  <td class="warning"><strong>Washington’s <i>prison</i> population</strong></td>
+  <td class="danger"><strong>Washington’s <i>total</i> population</strong></td>
+</tr>
+<tr>
+  <td class="active">American Indian/Alaska Native</td>
+  <td>3.6%</td>
+  <td class="warning">4.2%</td>
+  <td class="danger">3.6%</td>
+</tr>
+<tr>
+  <td class="active">Asian/Pacific Islander</td>
+  <td>7.7%</td>
+  <td class="warning">3.7%</td>
+  <td class="danger">7.8%</td>
+</tr>
+<tr>
+  <td class="active">Black/African American</td>
+  <td>20.1%</td>
+  <td class="warning">18.7%</td>
+  <td class="danger">3.6%</td>
+</tr>
+<tr>
+  <td class="active">Hispanic/Latino</td>
+  <td>8.9%</td>
+  <td class="warning">12.1%</td>
+  <td class="danger">11.2%</td>
+</tr>
+<tr>
+  <td class="active">Caucasian/White</td>
+  <td>60.4%</td>
+  <td class="warning">71.5%</td>
+  <td class="danger">77.3%</td>
+</tr>
+</table>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+<h4>Students by Age:</h4>
+
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+<tr>
+  <td class="active">Under 22</td>
+  <td class="success">1.78%</td>
+</tr>
+<tr>
+  <td class="active">22 to 25</td>
+  <td class="success">8.8%</td>
+</tr>
+<tr>
+  <td class="active">25 to 30</td>
+  <td class="success">23.08%</td>
+</tr>
+<tr>
+  <td class="active">30 to 35</td>
+  <td class="success">17.16%</td>
+</tr>
+<tr>
+  <td class="active">35 to 45</td>
+  <td class="success">30.77%</td>
+</tr>
+<tr>
+  <td class="active">45 to 60</td>
+  <td class="success">15.38%</td>
+</tr>
+<tr>
+  <td class="active">60 and over</td>
+  <td class="success">2.96%</td>
+</tr>
+</table>
+</div>
+</div>
+
+<div class="col-md-6">
+<h4>Students by Time until Release</h4>
+<div class="table-responsive">
+<table class="table table-hover table-bordered">
+<tr>
+  <td class="active">Unknown But Now Released</td>
+  <td class="info">3.8%</td>
+</tr>
+<tr>
+  <td class="active">Past Earliest Release Date (ERD)</td>
+  <td class="info">0.7%</td>
+</tr>
+<tr>
+  <td class="active">Under 2 Years</td>
+  <td class="info">36.9%</td>
+</tr>
+<tr>
+  <td class="active">2 to 5 Years</td>
+  <td class="info">32.3%</td>
+</tr>
+<tr>
+  <td class="active">5 to 10 Years</td>
+  <td class="info">13.1%</td>
+</tr>
+<tr>
+  <td class="active">15 to 20 Years</td>
+  <td class="info">0%</td>
+</tr>
+<tr>
+  <td class="active">20 to 30 Years</td>
+  <td class="info">4.6%</td>
+</tr>
+<tr>
+  <td class="active">30 Years or More</td>
+  <td class="info">0.7%</td>
+</tr>
+<tr>
+  <td class="active">Life Without Parole</td>
+  <td class="info">5.4%</td>
+</tr>
+<tr>
+  <td class="active">Unknown But Now Released  </td>
+  <td class="info">3.8%</td>
+</tr>
+</table>
+</div>
+</div>
+
+</div> <!-- row -->
+
+<h3>Student Publications and Writing Honors</h3>
+<p>
+UBB is proud of the achievements of all of our students, and we are honored to share some of the UBB student work that has been recognized in writing competitions and published in anthologies and national and international journals and magazines.</p>
+
+<h4>2014</h4>
+<p>
+Longworth, Arthur. “Walla Walla IMU.” In <i>Tacenda Literary Magazine</i>, edited by Alexa Marie Kelly and Hannah Ehlers, 146-149. BleakHouse Publishing, 2014. Available at <a href="http://www.bleakhousepublishing.com/tacenda.html" target="_blank">http://www.bleakhousepublishing.com/tacenda.html</a>.</p>
+<p>
+Pauley, Timothy.  “Forthcoming Title.” In <i>Prison Noir</i>, edited by Joyce Carol Oates. Brooklyn: Akashic Books, forthcoming. </p>
+
+<h4>2013</h4>
+<p>
+Bourgeois, Jeremiah. “The Irrelevance of Reform: Maturation in the Department of Corrections.” <i>Ohio State Journal of Criminal Law</i> 11 (2013): 149-159. Available at <a href="http://moritzlaw.osu.edu/students/groups/osjcl/files/2013/12/7.-Bourgeois.pdf" target="_blank">http://moritzlaw.osu.edu/students/groups/osjcl/files/2013/12/7.-Bourgeois.pdf</a></p>
+<p>
+Rafay, Atif, “An ‘Impossible Profession’? The Radical University in Prison.” <i>Radical Teacher</i> 95, no. 1 (2013): 10-21. Available at <a href="http://muse.jhu.edu/" target="_blank">http://muse.jhu.edu/</a>.</p>
+
+<h4>2012</h4>
+<p>
+Rafay, Atif. “Bleak Housing and Black Americans: Some Problems in the Use of Racial Disparities in Incarceration as a Reason for Reform.” <i>Journal of Poverty</i> 16, no. 3 (August 14, 2012): 353-362. <i>As reprinted in Pen.org</i>. October 24, 2012. <a href="http://www.pen.org/nonfiction/bleak-housing-black-americans" target="_blank">http://www.pen.org/nonfiction/bleak-housing-black-americans</a>. (<i>Awarded First Place in essay in the 2012 PEN America Prison Writing Contest</i>).</p>
+
+<h4>2011</h4>
+<p>
+Rafay, Atif, “On the Margins of Freedom.” <i>The Walrus Magazine</i>.  April 2011. <a href="http://thewalrus.ca/on-the-margins-of-freedom/" target="_blank">http://thewalrus.ca/on-the-margins-of-freedom/</a>. <i>As reprinted in Best Canadian Essays 2012</i>, edited by Christopher Doda and Ray Robertson, 193-214. Toronto: Tightrope Books, 2012.</p>
+
+<h4>2010</h4>
+<p>
+Conner, Jeff. “Fault.” <i>Pen.org</i>. April 6, 2010. <a href="http://www.pen.org/fiction-short-story/fault" target="_blank">http://www.pen.org/fiction-short-story/fault</a>. (<i>Awarded the Dawson Prize in fiction in the 2010 PEN America Prison Writing Contest</i>).</p>
+<p>
+Longworth, Arthur. “Walla Walla IMU.” Pen.org. April 8, 2010. <a href="http://www.pen.org/nonfiction-memoir/walla-walla-imu" target="_blank">http://www.pen.org/nonfiction-memoir/walla-walla-imu</a>. (Awarded First Place in memoir in the 2010 PEN America Prison Writing Contest).</p>
+
+<h4>2008</h4>
+<p>
+Longworth, Arthur. “The Hole.” <i>Pen.org</i>. June 24, 2008. <a href="http://www.pen.org/fiction-short-story/fault" target="_blank">http://www.pen.org/fiction-short-story/fault</a>. (<i>Recipient of an Honorable Mention in essay in the 2008 PEN America Prison Writing Contest</i>).</p>
+
+</div>
+
+
+
+
+</body>
+</html>
